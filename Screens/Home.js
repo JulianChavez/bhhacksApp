@@ -7,6 +7,7 @@ import GPTScreen from './GptScreen.js';
 function Home() {
     const navigation = useNavigation();
     const route = useRoute();
+    const userData = route.params?.userData
 
     const [openSelection, setOpenSelection] = useState(false);
     const [valueSelection, setValueSelection] = useState(null);
@@ -57,18 +58,6 @@ function Home() {
         { label: "Yes", value: '1' },
         { label: "No", value: "0" }
     ])
-    const [openSelectionNine, setOpenSelectionNine] = useState(false);
-    const [valueSelectionNine, setValueSelectionNine] = useState(null);
-    const [itemSelectionNine, setItemSelectionNine] = useState([
-        { label: "Yes", value: '1' },
-        { label: "No", value: "0" }
-    ])
-    const [openSelectionTen, setOpenSelectionTen] = useState(false);
-    const [valueSelectionTen, setValueSelectionTen] = useState(null);
-    const [itemSelectionTen, setItemSelectionTen] = useState([
-        { label: "Yes", value: '1' },
-        { label: "No", value: "0" }
-    ])
 
 
 
@@ -79,7 +68,7 @@ function Home() {
 
 
     function addValues() {
-        setDropDownValue([valueSelection, valueSelectionTwo, valueSelectionThree, valueSelectionFour])
+        setDropDownValue([valueSelection, valueSelectionTwo, valueSelectionThree, valueSelectionFour, valueSelectionFive, valueSelectionSix, valueSelectionSeven, valueSelectionEight])
         // console.log(dropDownValue.forEach((item, i) => {
         //     console.log(item)
         //     console.log(i)
@@ -97,144 +86,116 @@ function Home() {
     return (
         <View style={styles.container}>
             <View style={styles.headerContainer}>
-                <Text style={styles.headerText}>Doctor APP, Zika Symptoms</Text>
+                <Text style={styles.headerText}>WELCOME, {userData}!</Text>
             </View>
             <View style={styles.checkListContainer}>
                 <SafeAreaView>
-                    <ScrollView alwaysBounceHorizontal={false}>
-
-                        <View style={styles.selectionOne}>
-                            <Text>Selection One</Text>
-                            <DropDownPicker
-                                open={openSelection}
-                                value={valueSelection}
-                                items={itemSelection}
-                                setOpen={setOpenSelection}
-                                setValue={setValueSelection}
-                                setItems={setItemSelection}
-                            />
-                        </View>
+                    <View style={styles.selectionOne}>
+                        <Text>Are You Pregnant?</Text>
+                        <DropDownPicker
+                            open={openSelection}
+                            value={valueSelection}
+                            items={itemSelection}
+                            setOpen={setOpenSelection}
+                            setValue={setValueSelection}
+                            setItems={setItemSelection}
+                        />
+                    </View>
 
 
-                        <View style={styles.selectionTwo}>
-                            <Text>Selection Two</Text>
-                            <DropDownPicker
-                                open={openSelectionTwo}
-                                value={valueSelectionTwo}
-                                items={itemSelectionTwo}
-                                setOpen={setOpenSelectionTwo}
-                                setValue={setValueSelectionTwo}
-                                setItems={setItemSelectionTwo}
-                            />
-                        </View>
+                    <View style={styles.selectionTwo}>
+                        <Text> Are you planning for a baby? </Text>
+                        <DropDownPicker
+                            open={openSelectionTwo}
+                            value={valueSelectionTwo}
+                            items={itemSelectionTwo}
+                            setOpen={setOpenSelectionTwo}
+                            setValue={setValueSelectionTwo}
+                            setItems={setItemSelectionTwo}
+                        />
+                    </View>
 
-                        <View style={styles.selectionThree}>
-                            <Text>Selection Three</Text>
-                            <DropDownPicker
-                                open={openSelectionThree}
-                                value={valueSelectionThree}
-                                items={itemSelectionThree}
-                                setOpen={setOpenSelectionThree}
-                                setValue={setValueSelectionThree}
-                                setItems={setItemSelectionThree}
-                            />
-                        </View>
+                    <View style={styles.selectionThree}>
+                        <Text>Are You Experiencing Cold Sweats?</Text>
+                        <DropDownPicker
+                            open={openSelectionThree}
+                            value={valueSelectionThree}
+                            items={itemSelectionThree}
+                            setOpen={setOpenSelectionThree}
+                            setValue={setValueSelectionThree}
+                            setItems={setItemSelectionThree}
+                        />
+                    </View>
 
-                        <View style={styles.selectionFour}>
-                            <Text>Selection Four</Text>
-                            <DropDownPicker
-                                open={openSelectionFour}
-                                value={valueSelectionFour}
-                                items={itemSelectionFour}
-                                setOpen={setOpenSelectionFour}
-                                setValue={setValueSelectionFour}
-                                setItems={setItemSelectionFour}
-                            />
-                        </View>
+                    <View style={styles.selectionFour}>
+                        <Text> Are You Experiencing Vaginal Bleeding?</Text>
+                        <DropDownPicker
+                            open={openSelectionFour}
+                            value={valueSelectionFour}
+                            items={itemSelectionFour}
+                            setOpen={setOpenSelectionFour}
+                            setValue={setValueSelectionFour}
+                            setItems={setItemSelectionFour}
+                        />
+                    </View>
 
-                        <View style={styles.selectionFive}>
-                            <Text>Selection Five</Text>
-                            <DropDownPicker
-                                open={openSelectionFive}
-                                value={valueSelectionFive}
-                                items={itemSelectionFive}
-                                setOpen={setOpenSelectionFive}
-                                setValue={setValueSelectionFive}
-                                setItems={setItemSelectionFive}
-                            />
-                        </View>
+                    <View style={styles.selectionFive}>
+                        <Text> Are You Experiencing Cramps?</Text>
+                        <DropDownPicker
+                            open={openSelectionFive}
+                            value={valueSelectionFive}
+                            items={itemSelectionFive}
+                            setOpen={setOpenSelectionFive}
+                            setValue={setValueSelectionFive}
+                            setItems={setItemSelectionFive}
+                        />
+                    </View>
 
-                        <View style={styles.selectionSix}>
-                            <Text>Selection Five</Text>
-                            <DropDownPicker
-                                open={openSelectionSix}
-                                value={valueSelectionSix}
-                                items={itemSelectionSix}
-                                setOpen={setOpenSelectionSix}
-                                setValue={setValueSelectionSix}
-                                setItems={setItemSelectionSix}
-                            />
-                        </View>
+                    <View style={styles.selectionSix}>
+                        <Text>Are You Experiencing A Fever? </Text>
+                        <DropDownPicker
+                            open={openSelectionSix}
+                            value={valueSelectionSix}
+                            items={itemSelectionSix}
+                            setOpen={setOpenSelectionSix}
+                            setValue={setValueSelectionSix}
+                            setItems={setItemSelectionSix}
+                        />
+                    </View>
 
-                        <View style={styles.selectionSeven}>
-                            <Text>Selection Five</Text>
-                            <DropDownPicker
-                                open={openSelectionSeven}
-                                value={valueSelectionSeven}
-                                items={itemSelectionSeven}
-                                setOpen={setOpenSelectionSeven}
-                                setValue={setValueSelectionSeven}
-                                setItems={setItemSelectionSeven}
-                            />
-                        </View>
+                    <View style={styles.selectionSeven}>
+                        <Text>Are You Experiencing Heaches?</Text>
+                        <DropDownPicker
+                            open={openSelectionSeven}
+                            value={valueSelectionSeven}
+                            items={itemSelectionSeven}
+                            setOpen={setOpenSelectionSeven}
+                            setValue={setValueSelectionSeven}
+                            setItems={setItemSelectionSeven}
+                        />
+                    </View>
 
-                        <View style={styles.selectionEight}>
-                            <Text>Selection Five</Text>
-                            <DropDownPicker
-                                open={openSelectionEight}
-                                value={valueSelectionEight}
-                                items={itemSelectionEight}
-                                setOpen={setOpenSelectionEight}
-                                setValue={setValueSelectionEight}
-                                setItems={setItemSelectionEight}
-                            />
-                        </View>
-
-                        <View style={styles.selectionNine}>
-                            <Text>Selection Five</Text>
-                            <DropDownPicker
-                                open={openSelectionNine}
-                                value={valueSelectionNine}
-                                items={itemSelectionNine}
-                                setOpen={setOpenSelectionNine}
-                                setValue={setValueSelectionNine}
-                                setItems={setItemSelectionNine}
-                            />
-                        </View>
-
-                        <View style={styles.selectionTen}>
-                            <Text>Selection Five</Text>
-                            <DropDownPicker
-                                open={openSelectionTen}
-                                value={valueSelectionTen}
-                                items={itemSelectionTen}
-                                setOpen={setOpenSelectionTen}
-                                setValue={setValueSelectionTen}
-                                setItems={setItemSelectionTen}
-                            />
-                        </View>
+                    <View style={styles.selectionEight}>
+                        <Text>Are You Experiencing Sudden Mood Swings?</Text>
+                        <DropDownPicker
+                            open={openSelectionEight}
+                            value={valueSelectionEight}
+                            items={itemSelectionEight}
+                            setOpen={setOpenSelectionEight}
+                            setValue={setValueSelectionEight}
+                            setItems={setItemSelectionEight}
+                        />
+                    </View>
 
 
 
 
+                    <View style={styles.nextPageButtonContainer}>
+                        <Button color='white' title='Check Items' onPress={addValues} />
+                        <Button color='white' title='ENTER' onPress={() => navigation.navigate("GptScreen", { data: dropDownValue })} />
+                    </View>
 
-                        <View style={styles.nextPageButtonContainer}>
-                            <Button color='white' title='checkItems' onPress={addValues} />
-                            <Button color='white' title='ENTER' onPress={() => navigation.navigate("GptScreen", { data: dropDownValue })} />
-                        </View>
 
-
-                    </ScrollView>
                 </SafeAreaView>
             </View>
 
@@ -246,10 +207,11 @@ function Home() {
 };
 export default Home
 
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#9E9E9E',
         alignItems: 'center',
         justifyContent: 'start',
     },
@@ -260,7 +222,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         width: '100%',
         height: 2,
-        backgroundColor: 'red',
+        backgroundColor: '#9E9E9E',
+
     },
     headerText: {
         fontSize: 20,
@@ -269,8 +232,9 @@ const styles = StyleSheet.create({
     checkListContainer: {
         flex: .9,
         width: '100%',
-        backgroundColor: 'green',
+        backgroundColor: '#9E9E9E',
         paddingVertical: 10,
+        opacity: 0.5
     },
     selectionOne: {
         zIndex: 10,
@@ -304,11 +268,13 @@ const styles = StyleSheet.create({
     },
     nextPageButtonContainer: {
         height: 40,
-        backgroundColor: 'orange',
+        backgroundColor: '#b5651d',
         alignItems: 'center'
     },
 
 
 });
+
+
 
 
